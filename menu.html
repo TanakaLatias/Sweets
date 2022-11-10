@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title></title>
+</head>
+
+<body>
+    <!-- header starts -->
+    <header>
+        <a href="#" class="logo">A recipe book</a>
+        <nav class="navbar">
+            <a href="index.html">Top</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="contact.html">Contact</a>
+            <a href="greeting.html">Greeting</a>
+        </nav>
+        <!--　スマホ用　ハンバーガーメニュー風　-->
+        <div class="icons" id="icons">
+            <i class="icon" id="icon"><img src="images/cake.png"></i>
+        </div>
+    </header>
+
+    <script type="text/javascript" src='recipes.js'></script>
+    <script>
+// 引数確認
+num = location.search.slice(1)
+console.log(`after?: ${num}`);
+// 型判定
+console.log(`Type: ${typeof num}`);
+// 数値の判定
+console.log(`integer judge: ${isFinite(num)}`);
+// 配列の中に存在する判定
+console.log(`menu_data: ${data.length}`);
+// 配列の中からデータを作成
+num_int = Number(num);
+console.log(num_int)
+target_data = data[num_int]
+console.log(`Type: ${typeof num_int}`);
+console.log(`title: ${target_data.title}`);
+</script>
+
+<div class="bigBox">
+    <section class="middleBox">
+        <div class="MOLB">
+            <div class="name-and-desc responsive">
+                <h2 class="name">
+                    <script>
+                        document.currentScript.parentNode.appendChild(el = document.createElement('div'));
+                        el.textContent = data[num_int].title;
+                    </script>
+                </h2>
+                <p class="desc">
+                    <script>
+                        document.currentScript.parentNode.appendChild(el = document.createElement('p'));
+                        el.textContent = data[num_int].content;
+                    </script>
+                </p>
+            </div>
+            <div class="MOLBPicBox">
+                <script>
+                    document.currentScript.parentNode.appendChild(el = document.createElement('img'));
+                    el.src = data[num_int].image;
+                    el.className = 'MOLBPicImg';
+                </script>
+            </div>
+            <div class="MOLBIngBox">
+                <p class="MOLBIngBoxP">ingredients</p>
+                <ul class="MOLBIngBoxUl">
+                    <script>
+                        for(i=0 ; i<data[num_int].ingredients.length ; i++) {
+                            document.currentScript.parentNode.appendChild(el = document.createElement('li'));
+                            el.className = 'MOLBIngBoxLi';
+                            el.textContent = data[num_int].ingredients[i];
+                        }
+                    </script>
+                </ul>
+            </div>
+        </div>
+        <div class="MORB">
+            <div class="accordion-box">
+                <div class="name-and-desc pc">
+                    <h2 class="name">
+                        <script>
+                        document.currentScript.parentNode.appendChild(el = document.createElement('div'));
+                        el.textContent = data[num_int].title;
+                    </script>
+                    </h2>
+                    <p class="desc">
+                        <script>
+                        document.currentScript.parentNode.appendChild(el = document.createElement('p'));
+                        el.textContent = data[num_int].content;
+                    </script>
+                    </p>
+                </div>
+                <div class="accordion">
+                    <script>
+                        for(i=0 ; i<data[num_int].steps.length ; i++) {
+                            document.currentScript.parentNode.appendChild(el = document.createElement('p'));
+                            el.className = 'menu js-menu';
+                            el.textContent = `${i+1}. ${data[num_int].steps[i].title}`;
+                            el.parentNode.appendChild(el = document.createElement('div'));
+                            el.className = 'contents is-open'
+                            el.textContent = `${data[num_int].steps[i].content}`;
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <p class="pageNumberP">
+            <script>
+                document.currentScript.parentNode.appendChild(el = document.createElement('p'));
+                el.textContent = num_int + 1;
+                function moveShooter(e) {
+                    switch(e.key) {
+
+                        case 'ArrowLeft' :
+                        if(num_int == 0) {
+                            num_int = data.length-1
+                            location.href= `menu.html?${num_int}`;
+                        } else {
+                            num_int -= 1
+                            location.href= `menu.html?${num_int}`;
+                        }
+                        break;
+
+                    case 'ArrowRight' :
+                        if(num_int == data.length-1) {
+                            num_int = 0
+                            location.href= `menu.html?${num_int}`;
+                        } else {
+                            num_int += 1
+                            location.href= `menu.html?${num_int}`;
+                        }
+                        break;
+                    }
+                }
+                document.addEventListener('keydown', moveShooter)
+            </script>
+        </p>
+    </section>
+</div>
+<footer>
+    <div class="footerBar">
+        <a href="index.html">Top</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="contact.html">Contact</a>
+        <a href="greeting.html">Greeting</a>
+    </div>
+    <div class="footerBarPara">
+        <p class="footerBarParaP">Special Thanks</p>
+        <p class="footerBarParaP">Ino-san</p>
+        <p class="footerBarParaP">Fumiyama-san</p>
+        <p class="footerBarParaP">---------------</p>
+    </div>
+</footer>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+
+    const recipemenu = document.querySelectorAll(".js-menu");
+    function toggle() {
+        const content = this.nextElementSibling;
+        this.classList.toggle("is-active");
+        content.classList.toggle("is-open");
+    }
+
+    for (let i = 0; i < recipemenu.length; i++) {
+        recipemenu[i].addEventListener("click", toggle);
+    }
+
+    // Header //
+    let menu = document.querySelector('#icon img');
+    let navbar = document.querySelector('.navbar');
+    menu.onclick = () =>{
+        navbar.classList.toggle('active');
+    }
+    function setSwipe(elem) {
+        let t = document.querySelector(elem);
+        let startX;		// タッチ開始 x座標
+        let startY;		// タッチ開始 y座標
+        let moveX;	// スワイプ中の x座標
+        let moveY;	// スワイプ中の y座標
+        let dist = 30;	// スワイプを感知する最低距離（ピクセル単位）
+                    
+        // タッチ開始時： xy座標を取得
+        t.addEventListener("touchstart", function(e) {
+            e.preventDefault();
+            startX = e.touches[0].pageX;
+            startY = e.touches[0].pageY;
+        });
+                    
+        // スワイプ中： xy座標を取得
+        t.addEventListener("touchmove", function(e) {
+            e.preventDefault();
+            moveX = e.changedTouches[0].pageX;
+            moveY = e.changedTouches[0].pageY;
+        });
+                    
+        // タッチ終了時： スワイプした距離から左右どちらにスワイプしたかを判定する/距離が短い場合何もしない
+        t.addEventListener("touchend", function(e) {
+        if (startX > moveX && startX > moveX + dist) {		// 右から左にスワイプ
+            if(num_int == data.length-1) {
+                num_int = 0
+                location.href= `menu.html?${num_int}`;
+            } else {
+                num_int += 1
+                location.href= `menu.html?${num_int}`;
+            }
+        }
+                        
+        if (startX < moveX && startX + dist < moveX) {	// 左から右にスワイプ
+            if(num_int == 0) {
+                num_int = data.length-1
+                location.href= `menu.html?${num_int}`;
+            } else {
+                num_int -= 1
+                location.href= `menu.html?${num_int}`;
+            }
+        
+        }
+        });
+    }
+                
+    window.addEventListener("load", function(){
+	setSwipe(".pageNumberP");
+    });
+</script>
+
+</body>
+</html>

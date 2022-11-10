@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="index.css">
+    <title>A recipe book</title>
+  </head>
+
+  <script type="text/javascript" src='recipes.js'></script>
+    <script>
+        // 引数確認
+        num = location.search.slice(1)
+        console.log(`after?: ${num}`);
+        // 型判定
+        console.log(`Type: ${typeof num}`);
+        // 数値の判定
+        console.log(`integer judge: ${isFinite(num)}`);
+        // 配列の中に存在する判定
+        console.log(`menu_data: ${data.length}`);
+        // 配列の中からデータを作成
+        // num_int = 0;
+        num_int = Number(num);
+        target_data = data[num_int]
+        console.log(`Type: ${typeof num_int}`);
+        console.log(`title: ${target_data.title}`);
+    </script>
+
+  <body>
+
+    <!-- header starts -->
+    <header>
+        <a href="#" class="logo">A recipe book</a>
+        <nav class="navbar">
+            <a href="#swimper">Top</a>
+            <a href="recipes.html">Recipes</a>
+            <a href="contact.html">Contact</a>
+            <a href="greeting.html">Greeting</a>
+        </nav>
+        <!--　スマホ用　ハンバーガーメニュー風　-->
+        <div class="icons" id="icons">
+            <i class="icon" id="icon"><img src="images/cake.png"></i>
+        </div>
+    </header>
+    <!-- header ends -->
+
+    <!-- slideshow starts -->
+    
+    <div class="boxFlex" id="box-container-for-swiper">
+        <div class="swiper-left-box">
+              <div class="swiper-para-box">
+                <p class="swiper-para">This book is full of delicious sweet recipes.<br>Hopefully, it makes you happy.</p>
+              </div>
+        </div>
+        <div class="swiper-h2-box">
+              <h2 class="swiper-h2">A recipe book</h2>
+        </div>
+        <div class="swiper mySwiper" id="swimper">
+            <div class="swiper-wrapper">
+              <script>
+                for(i=0 ; i<data.length ; i++) {
+                  document.currentScript.parentNode.appendChild(el = document.createElement('div'));
+                  el.className = 'swiper-slide';
+                  el.appendChild(el = document.createElement('img'));
+                  el.src = data[i].image;
+                }
+              </script>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+  </div>
+
+    <!-- Slideshow ends -->
+
+    <!-- About starts-->
+
+    <section class="about" id="about">
+
+      <div class="aboutHeadingBox boxFlex">
+        <div class="aboutHeadingBlocks boxFlex">
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+        </div>
+        <p class="aboutHeadingP">3 steps to enjoy this recipe book</p>
+        <div class="aboutHeadingBlocks boxFlex">
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+        </div>
+      </div>
+
+      <div class="aboutBoxBox">
+        <div class="aboutBox boxFlex">
+          <div class="aboutPictureBox"><img src="images/bluecake.jpg" class="aboutPictureImg"></div>
+          <div class="aboutTextBox">
+            <p class="aboutTextP">1. Looking for sweets that catch your attention.<br>Tapping a tab named 'Recipes' leads you to an index page (The tab is on the top banner. If it is a cell phone, just tap a cupcake on the banner and it will show up. Or you can find it at the very bottom as well.). Then, please go over all the recipes and choose whatever you like.</p>
+          </div>
+        </div>
+        <div class="aboutBox boxFlex">
+          <div class="aboutPictureBox"><img src="images/bluecake.jpg" class="aboutPictureImg"></div>
+          <div class="aboutTextBox">
+            <p class="aboutTextP">2. Reading the recipes.<br>Jumping to a recipe page, you can read through the whole directions and learn how it is made. Each page has got a link to a recipe creator's SNS or homepage, so you can visit there, too. By the way, flipping a page number at the bottom right of each page leads you to the previous or next recipe directly.</p>
+          </div>
+        </div>
+        <div class="aboutBox boxFlex">
+          <div class="aboutPictureBox"><img src="images/bluecake.jpg" class="aboutPictureImg"></div>
+          <div class="aboutTextBox">
+            <p class="aboutTextP">3. Well, that's it.<br>If you feel like actually cooking the sweets, the third step will be like purchasing ingredients or starting from the first direction right away. That must be fun. But if you do not have time or energy (or maybe just too lazy like me), that's totally okay! Please just read the recipes like reading a book and have fun!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="aboutHeadingBox boxFlex">
+        <div class="aboutHeadingBlocks boxFlex">
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+        </div>
+        <p class="aboutHeadingP">Let's dive into the world of sweets!</p>
+        <div class="aboutHeadingBlocks boxFlex">
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+          <div class="aboutHeadingBlock"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- About ends-->
+
+  <footer>
+
+    <div class="footerBar">
+      <a href="#swimper">Top</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="contact.html">Contact</a>
+      <a href="greeting.html">Greeting</a>
+    </div>
+
+    <div class="footerBarPara">
+      <p class="footerBarParaP">Special Thanks</p>
+      <p class="footerBarParaP">Ino-san</p>
+      <p class="footerBarParaP">Fumiyama-san</p>
+      <p class="footerBarParaP">---------------</p>
+    </div>
+
+  </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,980 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&family=Lobster&display=swap');
+
+*{
+    font-family: "Edu NSW ACT Foundation", sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    transition: all 1s ease;
+    position: relative;
+    text-align: center;
+}
+
+body {
+	animation: fadein 4s forwards;
+  background-color: var(--palebrown);
+}
+
+@keyframes fadein {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+
+:root {
+  --brown: rgb(110, 94, 74);
+  --palebrown: rgb(176, 149, 117);
+  --palepalebrown: rgb(247, 210, 165);
+  --palepalepalebrown: rgba(247, 210, 165, .8);
+  --nearwhite: rgb(247, 240, 231);
+  --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+html {
+    position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    font-size: 3rem;
+    color: var(--brown);
+    background-color: var(--palebrown);
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.boxFlex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+    
+    /* Header */
+    
+header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 7%;
+    z-index: 15;
+    background: var(--brown);
+    box-shadow: var(--box-shadow);
+}
+    
+header .logo{
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: lighter;
+}
+
+header .navbar a, .footerBar a{
+    margin: auto 2rem;
+    padding:.5rem 1.5rem;
+    text-decoration: none;
+    border-radius: .5rem;
+    color: whitesmoke;
+}
+    
+header .navbar a:hover, .footerBar a:hover{
+    color: var(--brown);
+    background: var(--palepalebrown);
+}
+
+header .icons .icon img {
+    cursor: pointer;
+    height: 45px;
+    border-radius: 50%;
+}
+
+header .icons {
+  display: none;
+}
+
+    /* Slideshow */
+
+    #box-container-for-swiper {
+      height: 100%;
+    }
+
+    .swiper-left-box {
+      margin-left: 0;
+      width: 30%;
+      height: 100%;
+    }
+
+    .swiper-para-box {
+      top: 10%;
+      left: 5%;
+    }
+
+    .swiper-para {
+      writing-mode: vertical-rl;
+      font-size: 5rem;
+      color: whitesmoke;
+      text-align: left;
+    }
+
+    .swiper-h2-box {
+      position: absolute;
+      top: 50%;
+      left: 15%;
+      z-index: 10;
+    }
+
+    .swiper-h2 {
+      font-size: 10rem;
+      text-shadow: 1px 1px 2px var(--palepalebrown);
+    }
+
+    .swiper {
+      margin-right: 0;
+      width: 70%;
+      height: 100%;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      z-index: 1;
+    }
+
+    .swiper-wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition-property: transform;
+      box-sizing: content-box;
+      z-index: 1;
+    }
+
+    .swiper-slide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      transition-property :transform
+    }
+
+    .swiper-slide a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+      border: 1px solid var(--brown);
+      background: whitesmoke;
+      opacity: 1;
+    }
+
+    .swiper-pagination-bullet:hover,
+    .swiper-pagination-bullet-active {
+      background-color: var(--brown);
+      opacity: 1;
+    }
+
+/* About */
+
+    #about {
+      background: var(--palebrown);
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    .aboutBoxBox {
+      width: 75%;
+      margin: auto;
+      background-color: whitesmoke;
+      padding: 5rem 0 10rem 0;
+    }
+
+    .aboutBox {
+      margin: auto;
+      width: 100%;
+      height: 350px;
+      margin-top: 5rem;
+    }
+
+    .aboutPictureBox {
+      width: 300px;
+      height: 300px;
+    }
+
+    .aboutTextBox {
+      width: 60%;
+      height: 300px;
+      padding: 1rem;
+    }
+
+    .aboutPictureImg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .aboutTextP {
+      line-height: 4rem;
+    }
+
+    .aboutHeadingBox {
+      margin: 15rem 0 15rem 0;
+    }
+
+    .aboutHeadingP {
+      color: whitesmoke;
+      
+    }
+
+    .aboutHeadingBlock {
+      height: 2.5rem;
+      width: 2.5rem;
+      background-color: var(--palepalebrown);
+      margin: 0 0.5rem 0 0.5rem;
+    }
+    
+    /* footer starts */
+
+      footer {
+        width: 100%;
+        height: 33rem;
+        background-color: var(--brown);
+      }
+
+      .footerBar {
+        padding: 2rem 4rem;
+      }
+
+      .footerBarPara {
+        margin: auto 4rem;
+        font-size: 2rem;
+        color: whitesmoke;
+      }
+
+      /* Contact */
+
+      #contact {
+        width: 100%;
+        height: 100%;
+        background-color: whitesmoke;
+      }
+
+      .contactBackImgBox {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .contactBackImgImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contactParaBox {
+        margin: auto;
+        width: 60%;
+        top: 20%;
+        background-color: var(--palepalepalebrown);
+        padding: 3rem;
+      }
+
+      .contactParaP, .contactParaH2 {
+        line-height: 5rem;
+      }
+
+      .contactParaH2 {
+        font-weight: lighter;
+        font-size: 3.5rem;
+        line-height: 5rem;
+      }
+
+
+      
+      /* menu-1 */
+
+      .bigBox {
+        min-height: 100%;
+        width: 100%;
+        padding-top: 22rem;
+        padding-bottom: 22rem;
+      }
+
+      .middleBox {
+        width: 85%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: whitesmoke;
+        box-shadow: 1px 1px 2px var(--brown);
+      }
+
+      .MOLB {
+        width: 45%;
+      }
+
+      .MOLBPicBox {
+        margin: 10rem auto;
+        height: 470px;
+        width: 470px;
+        box-shadow: 1px 1px 2px var(--brown);
+      }
+
+      .MOLBPicImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .MOLBIngBox {
+        width: 80%;
+        margin: 2rem auto 10rem auto;
+        background-color: var(--palepalepalebrown);
+        box-shadow: 1px 1px 2px var(--brown);
+      }
+
+      .MOLBIngBoxP,
+      .MOLBIngBoxUl,
+      .MOLBIngBoxLi {
+        list-style: none;
+        padding: 1rem;
+        border-bottom: 0.5px solid var(--brown);
+      }
+
+      .MORB {
+        position: relativeaccordion-box;
+        width: 55%;
+        margin: 0 auto;
+        padding-bottom: 10rem;
+      }
+
+
+      /* accordion */
+
+
+      .name-and-desc {
+        margin-top: 10rem;
+        padding: 5rem;
+      }
+
+      .name {
+        font-size: 4rem;
+        font-weight: lighter;
+      }
+
+      .accordion {
+        width: 80%;
+        margin: 10rem auto;
+      }
+
+      .menu {
+        padding: 1rem;
+        cursor: pointer;
+        user-select: none;
+        border-bottom: 1px solid var(--palepalebrown);
+        background-color: var(--palepalepalebrown);
+        box-shadow: 1px 1px 2px var(--brown);
+      }
+
+      .contents {
+        line-height: 0;
+        height: 0;
+        opacity: 0;
+        transition-duration: 1s;
+        background-color: whitesmoke;
+        border-bottom: 1px solid var(--palepalebrown);
+        border-top: 1px solid var(--brown);
+      }
+
+      .contents.is-open {
+        padding: 10px;
+        line-height: normal;
+        height: auto;
+        opacity: 1;
+      }
+
+      .pageNumberP {
+        font-size: 6rem;
+        display: block;
+        position: absolute;
+        bottom: 3%;
+        right: 5%;
+        padding: 3rem;
+      }
+
+
+      /* MenuPage */
+
+      #recipes {
+        min-height: 100%;
+        width: 100%;
+      }
+
+      .recipesaboutHeadingBox {
+        margin-top: 20rem;
+      }
+
+      #menuBox {
+        margin: auto;
+        width: 80%;
+        align-items: center;
+      }
+
+      .menuPage {
+        margin: auto;
+        width: 370px;
+        height: 550px;
+        background-color: var(--nearwhite);
+        margin-bottom: 10rem;
+        cursor: pointer;
+        box-shadow: 1px 1px 2px var(--brown);
+        border-radius: 2px;
+      }
+
+      .menuPage:hover {
+        background-image: url(images/page.png);
+        background-size: auto;
+      }
+
+      .menuPageImgBox {
+        margin: 3rem auto;
+        width: 200px;
+        height: 200px;
+        box-shadow: 1px 1px 2px var(--brown);
+      }
+
+      .menuPageImgImg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .menuPageParaBox {
+        height: auto;
+        width: 70%;
+        margin: auto;
+      }
+
+      .menuPageH3 {
+        font-size: 2rem;
+        font-weight: lighter;
+        border-bottom: 1px solid var(--brown);
+        text-shadow: 1px 1px 2px var(--palepalebrown);
+      }
+
+      .menuPageP {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+        text-shadow: 1px 1px 2px var(--palepalebrown);
+        white-space: pre-line;
+      }
+      
+      .number {
+        position: absolute;
+        font-size: 5rem;
+        bottom: 3%;
+        right: 7%;
+        text-shadow: 1px 1px 2px var(--palepalebrown);
+      }
+
+      .responsive {
+        display: none;
+      }
+
+      .pc {
+        display: block;
+      }
+
+
+
+    /* media queries  */
+
+    @media (max-width:1300px) {
+
+      /* Header */
+
+      header{
+        padding: 2rem 7%;
+      }
+
+      .swiper-para-box {
+        top: 25%;
+      }
+
+      .swiper-para, .aboutHeadingP {
+        font-size: 4rem;
+      }
+  
+      .aboutHeadingBlock {
+        height: 3rem;
+        width: 3rem;
+      }
+
+      .aboutTextBox {
+        padding: 0;
+      }
+
+      .aboutTextP {
+        font-size: 2.5rem;
+      }
+
+      .aboutTextBox {
+        padding: 1rem;
+      }
+
+      .contactParaBox {
+        width: 70%;
+        min-height: 50%;
+      }
+
+      .contactParaP, .contactParaH2 {
+        line-height: 4.5rem;
+      }
+
+      #menuBox {
+        width: 90%;
+        padding-bottom: 10rem;
+      }
+
+      .MOLBPicBox {
+        height: 400px;
+        width: 400px;
+      }
+
+      .name {
+        font-size: 4rem;
+      }
+
+      .pageNumberP {
+        font-size: 5rem;
+      }
+
+      .responsive {
+        display: none;
+      }
+
+      .pc {
+        display: block;
+      }
+
+    }
+
+@media (max-width:850px){
+
+  
+    html{
+      font-size: 65%;
+    }
+
+    header .icons {
+        display: inline-block;
+    }
+
+    header .navbar{
+        position: absolute;
+        top:100%; left:0; right:0;
+        background: var(--brown);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding:1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2.5rem;
+        background: var(--palepalebrown);
+        color: var(--brown);
+    }
+    
+    header{
+      padding: 2rem 4rem;
+    }
+
+    .swiper-h2 {
+      font-size: 9rem;
+    }
+
+    .swiper-h2-box {
+      left: 20%;
+    }
+
+    .swiper-para-box {
+      top: 35%;
+    }
+
+    .aboutBoxBox {
+      width: 100%;
+      padding: 0;
+      background-color: var(--palebrown);
+    }
+
+    .aboutBox {
+      height: auto;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      background-color: var(--palebrown);
+    }
+
+    .aboutPictureBox {
+      margin: 0;
+      width: 550px;
+      height: 550px;
+      border: 1rem solid var(--nearwhite);
+    }
+
+    .aboutTextBox {
+      margin: 5rem 0;
+      width: 550px;
+      height: 550px;
+      background-color: var(--nearwhite);
+      padding: 2rem;
+    }
+
+    .aboutTextP {
+      font-size: 3.5rem;
+      padding: 1rem;
+      line-height: 4.3rem;
+    }
+
+    .aboutHeadingP {
+      font-size: 2.5rem;
+    }
+
+    #menuBox {
+      width: 100%;
+    }
+
+    .menuPage {
+      width: 333px;
+      height: 495px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .menuPage:hover {
+      background-image: url(images/page02.png);
+      background-size: auto;
+    }
+
+    .menuPageImgBox {
+      margin: 2rem auto;
+      width: 180px;
+      height: 180px;
+    }
+
+    .menuPageH3 {
+      font-size: 2rem;
+    }
+    
+    .bigBox {
+      padding-bottom: 14rem;
+    }
+
+    .responsive {
+      display: block;
+      margin-bottom: 10rem;
+    }
+
+    .pc {
+      display: none;
+    }
+
+    .MOLB {
+      width: 100%;
+    }
+
+    .MORB {
+      width: 100%;
+    }
+
+    .MOLBIngBox {
+      width: 90%;
+    }
+
+    .MOLBPicBox {
+      height: 550px;
+      width: 550px;
+    }
+
+    .name-and-desc {
+      padding: 0 5rem;
+    }
+
+    .name {
+      font-size: 4rem;
+      border-bottom: 1px solid var(--brown);
+    }
+
+    .accordion {
+      width: 90%;
+      margin: 0 auto 10rem auto;
+    }
+
+    .pageNumberP {
+      bottom: 0;
+      right: 3%;
+    }
+
+    #contact {
+      margin-bottom: 20rem;
+    }
+
+    .contactParaBox {
+      top: 20%;
+      margin-bottom: 10rem;
+    }
+
+    .contactParaP {
+      line-height: 4rem;
+    }
+
+}
+
+@media (max-width:450px) {
+
+  html{
+    font-size: 60%;
+  }
+  
+  header {
+    padding: 0.7rem 7%;
+  }
+
+  header .navbar a{
+    font-size: 2.5rem;
+  }
+
+  .swiper-para-box {
+    top: 50%;
+  }
+
+  .swiper-para {
+    font-size: 3rem;
+  }
+
+  .swiper-h2-box {
+    top: 45%;
+  }
+
+  .swiper-h2 {
+    font-size: 7rem;
+  }
+
+  .aboutPictureBox {
+    margin: 2rem 0;
+    width: 340px;
+    height: 340px;
+    border: 1rem solid var(--nearwhite);
+  }
+
+  .aboutTextBox {
+    margin: 2rem 0;
+    width: 340px;
+    height: 340px;
+    background-color: var(--nearwhite);
+    padding: 2rem;
+  }
+
+  .aboutTextP {
+    font-size: 2.2rem;
+    line-height: 3rem;
+  }
+
+  .aboutHeadingP {
+    font-size: 3rem;
+    padding: 1rem;
+  }
+
+  .aboutHeadingBlock {
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding: 1rem;
+  }
+
+  footer {
+    width: 100%;
+    height: 44rem;
+    background-color: var(--brown);
+  }
+
+  .footerBar {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+  }
+
+  .footerBar a {
+    width: 50%;
+    margin: 0;
+  }
+
+  .recipesAboutHeadingBlocks {
+    margin: 0 3rem;
+  }
+  
+  .bigBox {
+    padding-bottom: 14rem;
+    padding-top: 14rem;
+  }
+
+  .MOLBPicBox {
+    margin: 10rem auto;
+    height: 340px;
+    width: 100%;
+  }
+
+  .middleBox {
+    width: 100%;
+  }
+
+  .responsive {
+    display: block;
+    margin-bottom: 10rem;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .MOLB {
+    width: 100%;
+  }
+
+  .MORB {
+    width: 100%;
+  }
+
+  .MOLBIngBox {
+    width: 75%;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .desc, .menu, .contents {
+    font-size: 2.5rem;
+  }
+
+  .MOLBIngBox {
+    margin: 2rem auto 5rem auto;
+    width: 90%;
+  }
+
+  .MOLBPicBox {
+    height: 350px;
+    width: 350px;
+    margin: 0 auto 5rem auto;
+  }
+
+  .pageNumberP {
+    bottom: 0;
+    right: 3%;
+  }
+
+  .contactParaBox {
+    width: 80%;
+    padding: 2rem;
+    margin-bottom: 0;
+  }
+
+  .contactParaP {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+
+  .contactParaH2 {
+    font-weight: lighter;
+    font-size: 3rem;
+    line-height: 4rem;
+  }
+
+}
+
+@media (max-width:400px) {
+
+  header{
+    padding: 0.5rem 7%;
+  }
+
+  header .navbar a,
+  .MOLBIngBoxP,
+  .MOLBIngBoxUl,
+  .MOLBIngBoxLi,
+  .menu,
+  .contents,
+  .desc,
+  .contactParaP,
+  .contactParaH2{
+    font-size: 2rem;
+  }
+
+  header .logo{
+    font-size: 2.5rem;
+  }
+
+  header .icons .icon img {
+    height: 40px;
+  }
+
+  .swiper-para-box {
+    top: 35%;
+  }
+
+  .swiper-para, .name {
+    font-size: 3rem;
+  }
+
+  .swiper-h2-box {
+    top: 40%;
+  }
+
+  .aboutHeadingP {
+    font-size: 2.5rem;
+    padding: 1rem;
+  }
+
+  .contactParaBox {
+    top: 20%;
+    padding: 1rem;
+  }
+
+  .menuPage {
+    margin-bottom: 5rem;
+  }
+
+
+}
+
+
+    
